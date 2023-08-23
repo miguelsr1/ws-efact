@@ -1,5 +1,6 @@
 package sv.com.jsoft.ws.efact;
 
+import io.quarkus.logging.Log;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
@@ -34,6 +35,7 @@ public class GreetingResource {
     @Path("/autocomplete")
     @Produces({MediaType.APPLICATION_JSON})
     public AutoCompleteSuggestionResponse autocomplete(@QueryParam("query") String query) {
+        Log.info("ok");
         String queryLowerCase = query.toLowerCase();
         List<Producto> lstProducto = Producto.listAll();
         return new AutoCompleteSuggestionResponse(lstProducto.stream()
