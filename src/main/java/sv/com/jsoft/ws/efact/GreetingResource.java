@@ -47,7 +47,6 @@ public class GreetingResource {
     @Path("/producto/{codigo}/")
     @Produces({MediaType.APPLICATION_JSON})
     public Producto productoByCodigo(@PathParam("codigo") String codigo) {
-        Log.info("ok");
         Optional<Producto> optional = Producto.findByIdOptional(codigo);
         return optional.orElseThrow(NotFoundException::new);
     }
