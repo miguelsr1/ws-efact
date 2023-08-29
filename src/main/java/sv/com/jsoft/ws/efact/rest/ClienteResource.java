@@ -1,5 +1,6 @@
 package sv.com.jsoft.ws.efact.rest;
 
+import io.quarkus.logging.Log;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
@@ -28,7 +29,7 @@ public class ClienteResource {
     @Transactional
     public Response save(Cliente cliente){
         try{
-            //repository.persist(cliente);
+            Log.info("/POST: "+cliente);
             cliente.persist();
             return Response.ok().build();
         }catch(ConstraintViolationException ex){
@@ -42,6 +43,7 @@ public class ClienteResource {
     @Transactional
     public Response update(@PathParam("id") Integer id, Cliente cliente){
         try{
+            Log.info("/PUT/{"+id+"/: "+cliente);
             Cliente clienteTmp = Cliente.findById(id);
             clienteTmp.codigo = cliente.codigo;
             clienteTmp.activo = cliente.activo;
