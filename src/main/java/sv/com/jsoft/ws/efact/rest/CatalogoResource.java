@@ -21,9 +21,16 @@ public class CatalogoResource {
     }
 
     @GET
-    @Path("/municipio/{cod}")
+    @Path("/municipios/{cod}")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Municipio> getMunicipioByDepa(@PathParam("cod") String codigoDepa){
         return Municipio.list("codigoDepartamento=?1", codigoDepa);
+    }
+
+    @GET
+    @Path("/municipio/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Municipio getMunicipioById(@PathParam("id") Integer id){
+        return Municipio.findById(id);
     }
 }

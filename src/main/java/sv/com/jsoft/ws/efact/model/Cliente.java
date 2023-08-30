@@ -15,7 +15,7 @@ public class Cliente extends PanacheEntityBase {
     public String nrc;
     public String email;
     @Column(name = "id_municipio")
-    public Integer idMunicpio;
+    public Integer idMunicipio;
     public String direccion;
     public String telefono;
     @Column(name = "nombre_contacto")
