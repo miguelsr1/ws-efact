@@ -7,6 +7,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import sv.com.jsoft.ws.efact.model.Departamento;
 import sv.com.jsoft.ws.efact.model.Municipio;
+import sv.com.jsoft.ws.efact.model.TipoUnidadMedida;
 
 import java.util.List;
 

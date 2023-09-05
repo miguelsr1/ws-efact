@@ -19,4 +19,7 @@ public class Producto  extends PanacheEntityBase {
     public Double precioUnitario;
     public Boolean activo;
 
+    @Column(name = "id_unidad_medida")
+    public Integer idUnidadMedida;
+
 }
