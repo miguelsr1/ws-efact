@@ -21,5 +21,5 @@ public class Pedido extends PanacheEntityBase {
     public String user;
 
     @OneToMany(mappedBy = "idPedido", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<DetallePedido> detallePedidoList;
+    public List<DetallePedido> detallePedidoList;
 }

@@ -15,4 +15,6 @@ public class DetallePedido extends PanacheEntityBase {
     @Column(name = "id_producto")
     public Integer idProducto;
     public Boolean activo;
+
+    public Double cantidad;
 }
